@@ -2,7 +2,7 @@
 String.prototype.toTitleCase = function (sensitive) {
     let ignores = [" "]
     let spaceList = [-1];
-    let splitText = this.toString().split("");
+    let splitText = this.toString().trim().split("");
     
     let sensitive_arr = sensitive && Array.isArray(sensitive) ? sensitive : ['number','string'].includes(typeof sensitive) ? (sensitive.toString().split("")) : []
    
@@ -32,10 +32,17 @@ String.prototype.toTitleCase = function (sensitive) {
   
     return titleCaseText.join("");
   };// * PascalCase Method
-String.prototype.toPascalCase = function () {
+String.prototype.toPascalCase = function (sensitive) {
     let ignores = ["-","_"," "]
     let spaceList = [-1];
     let splitText = this.toString().split("");
+
+    
+    let sensitive_arr = sensitive && Array.isArray(sensitive) ? sensitive : ['number','string'].includes(typeof sensitive) ? (sensitive.toString().split("")) : []
+    if(sensitive_arr.length){
+      ignores = ignores.concat(sensitive_arr)
+    }
+    
     let tentative;
     splitText.forEach((element, index) => {
       if (ignores.includes(element)) {

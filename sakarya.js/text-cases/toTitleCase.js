@@ -2,7 +2,7 @@
 String.prototype.toTitleCase = function (sensitive) {
     let ignores = [" "]
     let spaceList = [-1];
-    let splitText = this.toString().split("");
+    let splitText = this.toString().trim().split("");
     
     let sensitive_arr = sensitive && Array.isArray(sensitive) ? sensitive : ['number','string'].includes(typeof sensitive) ? (sensitive.toString().split("")) : []
    
