@@ -1,0 +1,8 @@
+{
+    "dictionary":[
+        {
+            "dir":"text-cases",
+            "files":["toTitleCase","toPascalCase"]
+        }
+    ]
+}
