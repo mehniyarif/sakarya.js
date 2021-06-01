@@ -1,5 +1,5 @@
 // * TitleCase Method
-String.prototype.toTitleCase = function (sensitive,unsensitive,replaces) {
+String.prototype.toTitleCase = function (sensitive,unsensitive) {
     let ignores = [" "]
     let spaceList = [-1];
     let splitText = this.toString().split("");

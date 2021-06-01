@@ -2,10 +2,27 @@
 
 #### Converting Case Methods
 
-- value.toPascalCase()
+##### value.toTitleCase()  
+
+  ```
+    "bu bir denemedir".toTitleCase()
+  ```
+  > Output:
+  > Bu Bir Denemedir
+
+  - Add Sensitive Character 
+    ```
+      "bu-bir_denemedir".toTitleCase('-_')
+          or
+      "bu-bir_denemedir".toTitleCase(['-','_'])
+    ```
+    > Output:
+    > Bu-Bir_Denemedir
+  --------------------
+##### value.toPascalCase()
+
+  ```
+    "bu bir denemedir".toPascalCase()
+  ```
   > Output:
   > BuBirDenemedir
-  
-- value.toTitleCase()
-  > Output:
-  > bu bir denemedir => Bu Bir Denemedir
