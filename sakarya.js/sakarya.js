@@ -1,20 +1,11 @@
 // * TitleCase Method
-String.prototype.toTitleCase = function (sensitive,unsensitive,replaces) {
+String.prototype.toTitleCase = function (sensitive) {
     let ignores = [" "]
     let spaceList = [-1];
     let splitText = this.toString().split("");
     
     let sensitive_arr = sensitive && Array.isArray(sensitive) ? sensitive : ['number','string'].includes(typeof sensitive) ? (sensitive.toString().split("")) : []
-    let unsensitive_arr = unsensitive && Array.isArray(unsensitive) ? unsensitive : ['number','string'].includes(typeof unsensitive) ? (unsensitive.toString().split("")) : []
-  
-  
-    if(unsensitive_arr.length){
-      sensitive_arr.forEach((elem,i)=>{
-        let ind = ignores.findIndex(v => v == elem)
-        ignores.splice(ind,1)
-      })
-    }
-    
+   
     if(sensitive_arr.length){
       ignores = ignores.concat(sensitive_arr)
     }
