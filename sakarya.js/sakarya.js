@@ -64,4 +64,23 @@ String.prototype.toPascalCase = function (sensitive) {
     });
     let joinText = titleCaseText.join("")
     return joinText.replaceAll(/[- _]/g,'');
+  }// * Replace Method
+String.prototype.replaces = function (beforeArr=[],afterArr=[]) {
+    let text = this.toString()
+    if (typeof beforeArr == 'string'){
+        beforeArr = beforeArr.toString().split("")
+    }
+    if (typeof afterArr == 'string'){
+        afterArr = afterArr.toString().split("")
+    }
+    if(beforeArr.length && afterArr.length){
+        beforeArr.forEach( async function(element,index) {
+            if(afterArr[index]){
+                await text.toUpperCase()
+            }
+        });
+        return text
+    }else{
+        return text
+    }
   }

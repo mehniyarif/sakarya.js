@@ -3,6 +3,11 @@
         {
             "dir":"text-cases",
             "files":["toTitleCase","toPascalCase"]
+        },
+        
+        {
+            "dir":"text-replace",
+            "files":["replaces"]
         }
     ]
 }
